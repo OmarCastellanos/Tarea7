@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "237316915245",
+    "project_id": "tarea7-ad2b4",
+    "storage_bucket": "tarea7-ad2b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237316915245:android:4954ddf9053ceaf950f8a4",
+        "android_client_info": {
+          "package_name": "com.tarea7"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_X_PztlRhGv7Bk-RBS0oThxWsaH9GGh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
