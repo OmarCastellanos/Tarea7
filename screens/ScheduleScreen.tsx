@@ -1,8 +1,8 @@
 import React, {useState, useEffect}from "react";
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import firestore from "@react-native-firebase/firestore";
 
-const ScheduleScreen = ({ }) => {
+const ScheduleScreen = ({navigation}: any) => {
     const [id, setId] = useState('');
     const [equipo1, setEquipo1] = useState('');
     const [equipo2, setEquipo2] = useState('');
@@ -11,7 +11,6 @@ const ScheduleScreen = ({ }) => {
 
     const handleSchedule = () => {
         firestore().collection('matches').add({
-            id,
             equipo1,
            equipo2,
            fecha,
@@ -19,27 +18,8 @@ const ScheduleScreen = ({ }) => {
         });
     };
 
-    const handleUpdate = () => {
-        firestore().collection('matches').doc(id).update({
-            equipo1,
-            equipo2,
-            fecha,
-            cancha,
-        });
-    };
-
-    const handleDelete = () => {
-        firestore().collection('matches').doc(id).delete();
-    };
-
     return (
         <View style={styles.container}>
-            <TextInput
-            style={styles.input}
-            placeholder="ID"
-            onChangeText={setId}
-            value={id}
-            />
             <TextInput
             style={styles.input}
             placeholder="Equipo 1"
@@ -65,9 +45,9 @@ const ScheduleScreen = ({ }) => {
             value={cancha}
             />
             <Button title="Agendar Partido" onPress={handleSchedule} color={"#007bff"}/>
-            <Button title="Actualizar Partido" onPress={handleUpdate} color={"#28a745"}/>
-            <Button title="Eliminar Partido" onPress={handleDelete} color={"#dc3545"}/> 
-        </View>
+            <TouchableOpacity onPress={() => navigation.navigate('Matches')}/>
+            <Text >Ver Partidos</Text>
+            </View>
     );
 };
 
