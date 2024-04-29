@@ -45,8 +45,9 @@ const ScheduleScreen = ({navigation}: any) => {
             value={cancha}
             />
             <Button title="Agendar Partido" onPress={handleSchedule} color={"#007bff"}/>
-            <TouchableOpacity onPress={() => navigation.navigate('Matches')}/>
+            <TouchableOpacity onPress={() => navigation.navigate('Matches')}>
             <Text >Ver Partidos</Text>
+            </TouchableOpacity>
             </View>
     );
 };

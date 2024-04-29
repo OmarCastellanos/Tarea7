@@ -53,7 +53,7 @@ const MatchesScreen = () => {
             <RNPickerSelect
                 onValueChange={(value) => setSelectedMatchId(value)}
                 items={matches}
-                placeholder={{ label: 'Selecciona un partido...', value: null }}
+                placeholder={{ label: 'Selecciona un partido...', value: null, color: '#9EA0A4' }}
             />
             {selectedMatch && (
                 <>
@@ -75,6 +75,7 @@ const MatchesScreen = () => {
                         onChangeText={(value) => updateMatch({ cancha: value })}
                     />
                     <Button title="Eliminar partido" onPress={deleteMatch} />
+                    <Button title="Actualizar partido" onPress={() => updateMatch({})} />
                 </>
             )}
         </View>
